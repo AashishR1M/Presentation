@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #cf352e, black);
+            color: white;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+        header, footer {
+            text-align: center;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            margin: 20px 0;
+        }
+        section {
+            padding: 20px;
+            display: none; /* Initially hide all sections */
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+        /* Logo Styling */
+        .logo {
+            height: 100px;
+            width: 100px;
+            border: 3px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            animation: fadeInZoom 2s ease-in-out;
+        }
+        @keyframes fadeInZoom {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .watermark {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('mclarenlogo.jpeg') no-repeat center center;
+            background-size: 50%;
+            opacity: 0.1;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="watermark"></div>
+    
+    <header>
+        <h1>McLaren Inventory</h1>
+        <img src="carlogo.jpg" alt="McLaren Logo" class="logo">
+    </header>
+    
+    <h2>Filters</h2>
+    Make: McLaren
+    <p>
+        <label>Model:</label>
+        <select id="car-select">
+            <option value="mclaren720s">McLaren 720S</option>
+            <option value="mclaren765lt">McLaren 765LT</option>
+            <option value="mclarenspeedtail">McLaren Speedtail</option>
+            <option value="mclaren600lt">McLaren 600LT</option>
+            <option value="mclaren620r">McLaren 620R</option>
+        </select>
+    </p>
+    
+    <section id="mclaren720s">
+        <h2>McLaren 720S</h2>
+        <img src="McLaren720S.jpg" alt="McLaren 720S" height="500" width="500">
+        <p>A light and strong supercar shaped by the forces of nature. Honed by the elements. Poised for attack. And ferociously fast. Yet beautifully made, tactile and effortlessly usable, every day.
+            The McLaren 720S coupe is purposeful and radical. With apex predator responses. This light and strong supercar accelerates from 0-60mph in an incredible 2.8 seconds when provoked. And can cover a quarter of a mile in 10.4 seconds. From a standing start.
+            But raw figures don’t reveal the whole story. There is pure driver engagement and contemporary luxury here too. In depth. A thrilling, accessible, natural balance.</p>
+    </section>
+    
+    <section id="mclaren765lt">
+        <h2>McLaren 765LT</h2>
+        <img src="MCLAREN765LT.jpg" alt="McLaren 765LT" height="500" width="550">
+        <p>Being based on the incredible 720S, the latest McLaren 765 Long Tail has everything in its favour. A flying start. And it delivers on every level. Radically lightened and lower, this powerful supercar uses innovative aerodynamics to create 25% more downforce than the 720S.
+            And this is the most powerful LT yet, with a shattering 765PS. Just 765 will ever be produced. For the lucky few, the next chapter is beginning…
+            Introducing the new McLaren 765LT. Born from fearless supercar engineering.</p>
+    </section>
+    
+    <section id="mclarenspeedtail">
+        <h2>McLaren Speedtail</h2>
+        <img src="McLarenSpeedtail.jpg" alt="McLaren Speedtail" height="500" width="700">
+        <p>A pure fusion of science and art in automotive form. The Speedtail is McLaren’s first ever Hyper-GT. Our most aerodynamically efficient hypercar ever. And the fastest McLaren to date. With a pioneering 1070PS hybrid powertrain at its core. The McLaren Speedtail brings together unprecedented levels of innovation and elegance to create a new benchmark in automotive design. And offers owners extraordinary opportunity for bespoke personalisation.</p>
+    </section>
+    
+    <section id="mclaren600lt">
+        <h2>McLaren 600LT</h2>
+        <img src="McLaren600LT.jpg" alt="McLaren 600LT" height="500" width="750">
+        <p>When it’s just you. The car. Raw and uncompromised. An empty road ahead. Calling you. Total focus. Pure adrenaline. This is the moment to push yourself. To the very edge of your ability.
+            This is the McLaren 600LT. It lives and breathes the relentless spirit of its ‘Longtail’ predecessors. United by the same singular focus. To push performance and driving to the absolute edge.
+            This is not a car for the faint-hearted. This is a track animal let loose on the road. A road-legal track-day supercar. Our new sportscar and coupe supercar benchmark. The fastest, most powerful and most extreme – yet road legal – Sports Series. Ever.
+            This is the next McLaren ‘Longtail’.</p>
+    </section>
+    
+    <section id="mclaren620r">
+        <h2>McLaren 620R</h2>
+        <img src="620R.jpg" alt="McLaren 620R" height="500" width="750">
+        <p>The 570S GT4 is the most successful GT race car we have ever built. Since its debut in 2017 it has won races in every championship it has competed in across four continents. And racked up more wins and podiums than any McLaren to date. Race cars, of course, must conform to strict motorsport regulations, but what would the 570S GT4 be like if freed from those restrictions? Today you have the answer: the McLaren 620R. 
+            Exclusive and extreme in equal measure, the McLaren 620R retains the DNA of a fully homologated track car yet is free from the restrictions that race regulations apply.</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 McLaren Dealership. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        document.getElementById('car-select').addEventListener('change', function() {
+            var selectedCar = this.value;
+            // Hide all sections
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+            // Display the selected car's section
+            document.getElementById(selectedCar).style.display = 'block';
+        });
+    </script>
+</body>
+</html>
